@@ -1,17 +1,17 @@
-function distanceFromHqInBlocks(block) {
-  return Math.abs(block - 42);
+function distanceFromHqInBlocks(location) {
+  return Math.abs(location - 42);
 }
 
-function distanceFromHqInFeet(block) {
-  return distanceFromHqInBlocks(block) * 264; // 1 block = 264 feet
+function distanceFromHqInFeet(location) {
+  return distanceFromHqInBlocks(location) * 264; // 1 block = 264 feet
 }
 
 function distanceTravelledInFeet(startBlock, endBlock) {
   return Math.abs(startBlock - endBlock) * 264;
 }
 
-function calculatesFarePrice(startBlock, endBlock) {
-  const distance = distanceTravelledInFeet(startBlock, endBlock);
+function calculatesFarePrice(start, destination) {
+  const distance = distanceTravelledInFeet(start, destination);
   if (distance <= 400) {
     return 0;
   } else if (distance > 400 && distance <= 2000) {
